@@ -1,6 +1,6 @@
 # 晓吹的摆烂博客 :link: https://XiaoCoaiX.github.io/xcsweb.github.io 
-### :page_facing_up: [2](https://XiaoCoaiX.github.io/xcsweb.github.io/tag.html) 
+### :page_facing_up: [3](https://XiaoCoaiX.github.io/xcsweb.github.io/tag.html) 
 ### :speech_balloon: 0 
-### :hibiscus: 20 
-### :alarm_clock: 2024-12-10 14:31:11 
+### :hibiscus: 287 
+### :alarm_clock: 2024-12-10 14:45:13 
 ### Powered by :heart: [Gmeek](https://github.com/Meekdai/Gmeek)
