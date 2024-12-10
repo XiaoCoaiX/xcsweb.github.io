@@ -1,4 +1,4 @@
-> 本文截取自 https://www.bilibili.com/video/BV112z3YUEmU 。
+> 本文截取自 https://www.bilibili.com/video/BV112z3YUEmU
 # 下载 C 编译器
 为了能在 Windows 上使用 GCC，我们可以下载 MSYS2，它包含了 GCC 编译器的 Windows 版本。而且是完全开源免费的。
 1. 进入网页 https://www.msys2.org ，找到 Installation，下载。
