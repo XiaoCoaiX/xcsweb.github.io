@@ -1,5 +1,7 @@
 ```c
 #include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
 
 int correctA(char n[], char guess[]) //判断位置正确的个数 
 {
@@ -50,7 +52,7 @@ char* random(char str[])
 		tag = 0;
 		int n;
 		srand((unsigned)time(NULL));
-		n = rand() % 8999 + 1000; // 生成在1000-9999之间的随机数
+		n = rand() % 8989 + 1000; // 生成在1000-9999之间的随机数
 		
 		// 拆分 
 		int n1, n2, n3, n4;
@@ -71,12 +73,14 @@ char* random(char str[])
 		int recur[10] = {0};
 		for (i = 0; i < 4; i++)
 		{
-			for (j = 0; j < 4; j++)
+			for (j = i; j < 4; j++)
 			{
 				if (i != j && str[i] == str[j])
-				tag = 1; // 有重复 
-				printf("[Warning] There are duplicaes of numbers.\n");
-				break;
+				{
+					tag = 1; // 有重复 
+					printf("[Warning] There are duplicaes of numbers.\n");
+					break;	
+				}
 			}
 			if (tag) break;
 		}

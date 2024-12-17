@@ -12,6 +12,8 @@
     </script>
 <meta name="description" content="```c
 #include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
 
 int correctA(char n[], char guess[]) //判断位置正确的个数 
 {
@@ -62,7 +64,7 @@ char* random(char str[])
 		tag = 0;
 		int n;
 		srand((unsigned)time(NULL));
-		n = rand() % 8999 + 1000; // 生成在1000-9999之间的随机数
+		n = rand() % 8989 + 1000; // 生成在1000-9999之间的随机数
 		
 		// 拆分 
 		int n1, n2, n3, n4;
@@ -83,12 +85,14 @@ char* random(char str[])
 		int recur[10] = {0};
 		for (i = 0; i < 4; i++)
 		{
-			for (j = 0; j < 4; j++)
+			for (j = i; j < 4; j++)
 			{
 				if (i != j && str[i] == str[j])
-				tag = 1; // 有重复 
-				printf('[Warning] There are duplicaes of numbers.\n');
-				break;
+				{
+					tag = 1; // 有重复 
+					printf('[Warning] There are duplicaes of numbers.\n');
+					break;	
+				}
 			}
 			if (tag) break;
 		}
@@ -119,6 +123,8 @@ int main()
 <meta property="og:title" content="C语言猜数字小游戏">
 <meta property="og:description" content="```c
 #include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
 
 int correctA(char n[], char guess[]) //判断位置正确的个数 
 {
@@ -169,7 +175,7 @@ char* random(char str[])
 		tag = 0;
 		int n;
 		srand((unsigned)time(NULL));
-		n = rand() % 8999 + 1000; // 生成在1000-9999之间的随机数
+		n = rand() % 8989 + 1000; // 生成在1000-9999之间的随机数
 		
 		// 拆分 
 		int n1, n2, n3, n4;
@@ -190,12 +196,14 @@ char* random(char str[])
 		int recur[10] = {0};
 		for (i = 0; i < 4; i++)
 		{
-			for (j = 0; j < 4; j++)
+			for (j = i; j < 4; j++)
 			{
 				if (i != j && str[i] == str[j])
-				tag = 1; // 有重复 
-				printf('[Warning] There are duplicaes of numbers.\n');
-				break;
+				{
+					tag = 1; // 有重复 
+					printf('[Warning] There are duplicaes of numbers.\n');
+					break;	
+				}
 			}
 			if (tag) break;
 		}
@@ -294,6 +302,8 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
     <div id="content">
 <div class="markdown-body" id="postBody"><div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-k">#include</span> <span class="pl-s">&lt;stdio.h&gt;</span>
+<span class="pl-k">#include</span> <span class="pl-s">&lt;time.h&gt;</span>
+<span class="pl-k">#include</span> <span class="pl-s">&lt;stdlib.h&gt;</span>
 
 <span class="pl-smi">int</span> <span class="pl-en">correctA</span>(<span class="pl-smi">char</span> <span class="pl-s1">n</span>[], <span class="pl-smi">char</span> <span class="pl-s1">guess</span>[]) <span class="pl-c">//判断位置正确的个数 </span>
 {
@@ -344,7 +354,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 		<span class="pl-s1">tag</span> <span class="pl-c1">=</span> <span class="pl-c1">0</span>;
 		<span class="pl-smi">int</span> <span class="pl-s1">n</span>;
 		<span class="pl-en">srand</span>((<span class="pl-smi">unsigned</span>)<span class="pl-en">time</span>(<span class="pl-c1">NULL</span>));
-		<span class="pl-s1">n</span> <span class="pl-c1">=</span> <span class="pl-en">rand</span>() % <span class="pl-c1">8999</span> <span class="pl-c1">+</span> <span class="pl-c1">1000</span>; <span class="pl-c">// 生成在1000-9999之间的随机数</span>
+		<span class="pl-s1">n</span> <span class="pl-c1">=</span> <span class="pl-en">rand</span>() % <span class="pl-c1">8989</span> <span class="pl-c1">+</span> <span class="pl-c1">1000</span>; <span class="pl-c">// 生成在1000-9999之间的随机数</span>
 		
 		<span class="pl-c">// 拆分 </span>
 		<span class="pl-smi">int</span> <span class="pl-s1">n1</span>, <span class="pl-s1">n2</span>, <span class="pl-s1">n3</span>, <span class="pl-s1">n4</span>;
@@ -365,12 +375,14 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 		<span class="pl-smi">int</span> <span class="pl-s1">recur</span>[<span class="pl-c1">10</span>] <span class="pl-c1">=</span> {<span class="pl-c1">0</span>};
 		<span class="pl-k">for</span> (<span class="pl-s1">i</span> <span class="pl-c1">=</span> <span class="pl-c1">0</span>; <span class="pl-s1">i</span> <span class="pl-c1">&lt;</span> <span class="pl-c1">4</span>; <span class="pl-s1">i</span><span class="pl-c1">++</span>)
 		{
-			<span class="pl-k">for</span> (<span class="pl-s1">j</span> <span class="pl-c1">=</span> <span class="pl-c1">0</span>; <span class="pl-s1">j</span> <span class="pl-c1">&lt;</span> <span class="pl-c1">4</span>; <span class="pl-s1">j</span><span class="pl-c1">++</span>)
+			<span class="pl-k">for</span> (<span class="pl-s1">j</span> <span class="pl-c1">=</span> <span class="pl-s1">i</span>; <span class="pl-s1">j</span> <span class="pl-c1">&lt;</span> <span class="pl-c1">4</span>; <span class="pl-s1">j</span><span class="pl-c1">++</span>)
 			{
 				<span class="pl-k">if</span> (<span class="pl-s1">i</span> <span class="pl-c1">!=</span> <span class="pl-s1">j</span> <span class="pl-c1">&amp;&amp;</span> <span class="pl-s1">str</span>[<span class="pl-s1">i</span>] <span class="pl-c1">==</span> <span class="pl-s1">str</span>[<span class="pl-s1">j</span>])
-				<span class="pl-s1">tag</span> <span class="pl-c1">=</span> <span class="pl-c1">1</span>; <span class="pl-c">// 有重复 </span>
-				<span class="pl-en">printf</span>(<span class="pl-s">"[Warning] There are duplicaes of numbers.\n"</span>);
-				<span class="pl-k">break</span>;
+				{
+					<span class="pl-s1">tag</span> <span class="pl-c1">=</span> <span class="pl-c1">1</span>; <span class="pl-c">// 有重复 </span>
+					<span class="pl-en">printf</span>(<span class="pl-s">"[Warning] There are duplicaes of numbers.\n"</span>);
+					<span class="pl-k">break</span>;	
+				}
 			}
 			<span class="pl-k">if</span> (<span class="pl-s1">tag</span>) <span class="pl-k">break</span>;
 		}
