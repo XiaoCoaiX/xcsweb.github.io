@@ -55,10 +55,34 @@ int play(char n[])
 		return 0;
 	}
 }
-
+char* random(char str[])
+{
+	int n;
+	srand((unsigned)time(NULL));
+	n = rand() % 9999 + 1000; // 生成在1000-9999之间的随机数
+	
+	// 拆分 
+	int n1, n2, n3, n4;
+	n1 = n / 1000;
+	n2 = n / 100 - n1 * 10;
+	n3 = n / 10 - n1 * 100 - n2 * 10;
+	n4 = n % 10;
+	
+	// 转成字符数组
+	int i;
+	str[0] = n1 + '0';
+	str[1] = n2 + '0';
+	str[2] = n3 + '0';
+	str[3] = n4 + '0';
+	str[4] = '\0';
+	printf('Generated random number is %s\n', str);
+	return str;
+}
 int main()
 {
-	char n[] = '1456';
+	char str[5];
+	char n[5];
+	strcpy(n, random(str));
 	int i, count = 0;
 	while (play(n) != 1)
 	{
@@ -66,7 +90,6 @@ int main()
 		printf('You still have %d chances.\n', 7 - count);
 		if (count > 6) break;
 	}
-
 }
 ``` 。">
 <meta property="og:title" content="C语言猜数字小游戏">
@@ -115,10 +138,34 @@ int play(char n[])
 		return 0;
 	}
 }
-
+char* random(char str[])
+{
+	int n;
+	srand((unsigned)time(NULL));
+	n = rand() % 9999 + 1000; // 生成在1000-9999之间的随机数
+	
+	// 拆分 
+	int n1, n2, n3, n4;
+	n1 = n / 1000;
+	n2 = n / 100 - n1 * 10;
+	n3 = n / 10 - n1 * 100 - n2 * 10;
+	n4 = n % 10;
+	
+	// 转成字符数组
+	int i;
+	str[0] = n1 + '0';
+	str[1] = n2 + '0';
+	str[2] = n3 + '0';
+	str[3] = n4 + '0';
+	str[4] = '\0';
+	printf('Generated random number is %s\n', str);
+	return str;
+}
 int main()
 {
-	char n[] = '1456';
+	char str[5];
+	char n[5];
+	strcpy(n, random(str));
 	int i, count = 0;
 	while (play(n) != 1)
 	{
@@ -126,7 +173,6 @@ int main()
 		printf('You still have %d chances.\n', 7 - count);
 		if (count > 6) break;
 	}
-
 }
 ``` 。">
 <meta property="og:type" content="article">
@@ -243,10 +289,34 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 		<span class="pl-k">return</span> <span class="pl-c1">0</span>;
 	}
 }
-
+<span class="pl-smi">char</span><span class="pl-c1">*</span> <span class="pl-en">random</span>(<span class="pl-smi">char</span> <span class="pl-s1">str</span>[])
+{
+	<span class="pl-smi">int</span> <span class="pl-s1">n</span>;
+	<span class="pl-en">srand</span>((<span class="pl-smi">unsigned</span>)<span class="pl-en">time</span>(<span class="pl-c1">NULL</span>));
+	<span class="pl-s1">n</span> <span class="pl-c1">=</span> <span class="pl-en">rand</span>() % <span class="pl-c1">9999</span> <span class="pl-c1">+</span> <span class="pl-c1">1000</span>; <span class="pl-c">// 生成在1000-9999之间的随机数</span>
+	
+	<span class="pl-c">// 拆分 </span>
+	<span class="pl-smi">int</span> <span class="pl-s1">n1</span>, <span class="pl-s1">n2</span>, <span class="pl-s1">n3</span>, <span class="pl-s1">n4</span>;
+	<span class="pl-s1">n1</span> <span class="pl-c1">=</span> <span class="pl-s1">n</span> / <span class="pl-c1">1000</span>;
+	<span class="pl-s1">n2</span> <span class="pl-c1">=</span> <span class="pl-s1">n</span> / <span class="pl-c1">100</span> <span class="pl-c1">-</span> <span class="pl-s1">n1</span> <span class="pl-c1">*</span> <span class="pl-c1">10</span>;
+	<span class="pl-s1">n3</span> <span class="pl-c1">=</span> <span class="pl-s1">n</span> / <span class="pl-c1">10</span> <span class="pl-c1">-</span> <span class="pl-s1">n1</span> <span class="pl-c1">*</span> <span class="pl-c1">100</span> <span class="pl-c1">-</span> <span class="pl-s1">n2</span> <span class="pl-c1">*</span> <span class="pl-c1">10</span>;
+	<span class="pl-s1">n4</span> <span class="pl-c1">=</span> <span class="pl-s1">n</span> % <span class="pl-c1">10</span>;
+	
+	<span class="pl-c">// 转成字符数组</span>
+	<span class="pl-smi">int</span> <span class="pl-s1">i</span>;
+	<span class="pl-s1">str</span>[<span class="pl-c1">0</span>] <span class="pl-c1">=</span> <span class="pl-s1">n1</span> <span class="pl-c1">+</span> <span class="pl-c1">'0'</span>;
+	<span class="pl-s1">str</span>[<span class="pl-c1">1</span>] <span class="pl-c1">=</span> <span class="pl-s1">n2</span> <span class="pl-c1">+</span> <span class="pl-c1">'0'</span>;
+	<span class="pl-s1">str</span>[<span class="pl-c1">2</span>] <span class="pl-c1">=</span> <span class="pl-s1">n3</span> <span class="pl-c1">+</span> <span class="pl-c1">'0'</span>;
+	<span class="pl-s1">str</span>[<span class="pl-c1">3</span>] <span class="pl-c1">=</span> <span class="pl-s1">n4</span> <span class="pl-c1">+</span> <span class="pl-c1">'0'</span>;
+	<span class="pl-s1">str</span>[<span class="pl-c1">4</span>] <span class="pl-c1">=</span> <span class="pl-c1">'\0'</span>;
+	<span class="pl-en">printf</span>(<span class="pl-s">"Generated random number is %s\n"</span>, <span class="pl-s1">str</span>);
+	<span class="pl-k">return</span> <span class="pl-s1">str</span>;
+}
 <span class="pl-smi">int</span> <span class="pl-en">main</span>()
 {
-	<span class="pl-smi">char</span> <span class="pl-s1">n</span>[] <span class="pl-c1">=</span> <span class="pl-s">"1456"</span>;
+	<span class="pl-smi">char</span> <span class="pl-s1">str</span>[<span class="pl-c1">5</span>];
+	<span class="pl-smi">char</span> <span class="pl-s1">n</span>[<span class="pl-c1">5</span>];
+	<span class="pl-en">strcpy</span>(<span class="pl-s1">n</span>, <span class="pl-en">random</span>(<span class="pl-s1">str</span>));
 	<span class="pl-smi">int</span> <span class="pl-s1">i</span>, <span class="pl-s1">count</span> <span class="pl-c1">=</span> <span class="pl-c1">0</span>;
 	<span class="pl-k">while</span> (<span class="pl-en">play</span>(<span class="pl-s1">n</span>) <span class="pl-c1">!=</span> <span class="pl-c1">1</span>)
 	{
@@ -254,7 +324,6 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 		<span class="pl-en">printf</span>(<span class="pl-s">"You still have %d chances.\n"</span>, <span class="pl-c1">7</span> <span class="pl-c1">-</span> <span class="pl-s1">count</span>);
 		<span class="pl-k">if</span> (<span class="pl-s1">count</span> <span class="pl-c1">&gt;</span> <span class="pl-c1">6</span>) <span class="pl-k">break</span>;
 	}
-
 }</pre></div></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
